@@ -85,4 +85,4 @@ def login(user: UserRegister, db: Session = Depends(get_db)):
     if not verfy_the_password(user.password, db_user.password):
         return {"message": "Wrong password!"}
     token = create_access_token(data={"sub": db_user.m_name})
-    return {"access_token": token, "token_type": "bearer"}
+    return {"access_token": token, "token_type": "bearer"}  
